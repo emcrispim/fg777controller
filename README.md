@@ -5,7 +5,7 @@
 ## About
 flighgear boeing 777 Controller for android
 
-This application allows control the [boeing 777](http://wiki.flightgear.org/Boeing_777) [Flightgear](http://www.flightgear.org/), read usage for proper configuration
+This application allows control the [boeing 777](http://wiki.flightgear.org/Boeing_777) [Flightgear](http://www.flightgear.org/), read usage for proper configuration.
 
 
 ![Apk Panel](https://s31.postimg.org/tess898xn/fg777controller.png)
@@ -28,20 +28,24 @@ This application allows control the [boeing 777](http://wiki.flightgear.org/Boei
 * lights
 * autopilot
 
+This are specific controllers for the boeing 777, but it  can be used to controll other aircrafts for basic usage like the, steering,rudder, throttle (one or two engines), gear, brakes, lights.
+
 
 ## Usage:
 ------
-1. Install/running Flighgear ([link](http://www.flightgear.org))
-2. Install/Select Boeing 777 ([link](http://fgfs.goneabitbursar.com/official/777.zip))
-1. Copy the xml files to your FlightGear Protocol directory 
-2. Run the FlightGear from command line with the following:
+1. Install/running Flighgear ([Site link](http://www.flightgear.org))
+2. Install/Select Boeing 777 ([download link](http://fgfs.goneabitbursar.com/official/777.zip))
+1. Copy the xml files from the xml repository directory to your FlightGear `Protocol` directory 
+2. Run the FlighGear with the required parameters:
+  * From command line:
         
         fgfs --generic=socket,in,20,,9009,udp,from_fgcontroller777 \
         --generic=socket,out,5,android-device-ip,9010,udp,to_fgcontroller777 \ 
         --telnet 9000
 
-  * Or Use FGRun, this can be set via Advanced > Input/Output.
-  * Change **android-device-ip** with your local ip Wifi network
+  * Or Use FGRun to set the required parameters in the  via Advanced > Input/Output menu.
+  
+  **Obs**: Change **android-device-ip** with your local ip Wifi network
 
 3. Install the apk from the bin directory (debug version).
 4. Go to the Settings (left up corner button) and enter the IP of your computer running Flighgear
