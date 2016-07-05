@@ -31,6 +31,8 @@ This application allows control the [boeing 777](http://wiki.flightgear.org/Boei
 
 ## Usage:
 ------
+1. Install/running Flighgear [link](http://www.flightgear.org)
+2. Install/Select Boeing 777 [link](http://fgfs.goneabitbursar.com/official/777.zip)
 1. Copy the xml files to your FlightGear Protocol directory 
 2. Run the FlightGear from command line with the following:
         
