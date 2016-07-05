@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<PropertyList>
+  <generic>
+    <output>
+       <line_separator>newline</line_separator>
+       <var_separator>,</var_separator>
+       
+       <chunk>
+         <name>aileron_0</name>
+           <type>float</type>
+           <format>%f</format>
+           <node>/controls/flight/aileron</node>       
+       </chunk>
+
+       <chunk>
+         <name>elevator_1</name>
+           <type>float</type>
+           <format>%f</format>
+           <node>/controls/flight/elevator</node>       
+       </chunk>
+
+       <chunk>
+          <name>throttle_2</name>
+          <type>float</type>
+          <format>%f</format>
+          <node>/controls/engines/engine/throttle</node> 
+        </chunk>
+
+        <chunk>
+          <name>throttle1_3</name>
+          <type>float</type>
+          <format>%f</format>
+          <node>/controls/engines/engine[1]/throttle</node> 
+        </chunk>
+
+        <chunk>
+          <name>rudder_4</name>
+          <type>float</type>
+          <format>%f</format>
+          <node>/controls/flight/rudder</node> 
+        </chunk>
+
+        <chunk>
+          <name>elevator-trim_5</name>
+          <type>float</type>
+          <format>%f</format>
+          <node>/controls/flight/elevator-trim</node> 
+        </chunk>
+
+        <chunk>
+          <name>brake-left_6</name>
+          <type>float</type>
+          <format>%f</format>
+          <node>/controls/gear/brake-left</node> 
+        </chunk>
+
+         <chunk>
+          <name>reverser_7</name>
+          <type>float</type>
+          <format>%f</format>
+          <node>/controls/engines/engine[0]/reverser</node> 
+        </chunk>
+
+        <chunk>
+          <name>flaps_8</name>
+          <type>float</type>
+          <format>%f</format>
+          <node>/controls/flight/flaps</node> 
+        </chunk>
+
+         <chunk>
+          <name>speedbrake_9</name>
+          <type>float</type>
+          <format>%f</format>
+          <node>/controls/flight/speedbrake-lever</node> 
+        </chunk>
+
+         <chunk>
+          <name>gear_10</name>
+          <type>int</type>
+          <format>%d</format>
+          <node>/controls/gear/gear-down</node> 
+        </chunk>
+
+         <chunk>
+          <name>parkingbrake_11</name>
+          <type>float</type>
+          <format>%f</format>
+          <node>/controls/gear/brake-parking</node> 
+        </chunk>
+
+        <chunk>
+          <name>view_12</name>
+          <type>int</type>
+          <format>%d</format>
+          <node>/sim/current-view/view-number</node>
+        </chunk>
+
+        <chunk>
+          <name>autobrake_13</name>
+          <type>integer</type>
+          <format>%d</format>
+          <node>/autopilot/autobrake/step</node>
+        </chunk>
+	
+      	<chunk>
+      	    <name>speed_14</name>
+      	    <format>%d</format>
+      	    <type>int</type>
+      	    <node>/instrumentation/airspeed-indicator/indicated-speed-kt</node>
+      	</chunk>
+
+       	<chunk>
+      	    <name>altitude_15</name>
+      	    <format>%d</format>
+      	    <type>int</type>
+      	    <node>/instrumentation/altimeter/indicated-altitude-ft</node>
+    	  </chunk>
+	   
+      	<chunk>
+      	    <name>rate of climb_16</name>
+      	    <format>%d</format>
+      	    <type>int</type>
+      	    <node>/instrumentation/inst-vertical-speed-indicator/indicated-speed-fpm</node>
+      	</chunk>
+
+         	<chunk>
+      	    <name>pitch angle_17</name>
+      	    <type>int</type>
+      	    <format>%d</format>
+      	    <node>/instrumentation/attitude-indicator/indicated-pitch-deg</node>
+      	</chunk>
+
+         	<chunk>
+      	    <name>Roll angle_18</name>
+      	    <type>int</type>
+      	    <format>%d</format>
+      	    <node>/instrumentation/attitude-indicator/indicated-roll-deg</node>
+      	</chunk>
+
+      	<chunk>
+      	    <name>heading_19</name>
+      	    <type>int</type>
+      	    <format>%d</format>
+      	    <node>/instrumentation/heading-indicator/indicated-heading-deg</node>
+      	</chunk>
+      	
+      	<chunk>
+      	    <name>AP_20</name>
+      	    <type>bool</type>
+      	    <format>%d</format>
+      	    <node>/instrumentation/afds/inputs/AP</node>
+      	</chunk>
+
+      	<chunk>
+      	    <name>AT_21</name>
+      	    <type>int</type>
+            <format>%d</format>
+      	    <node>/instrumentation/afds/inputs/autothrottle-index</node>
+      	</chunk>
+
+      	<chunk>
+      	    <name>FD_22</name>
+      	    <type>bool</type>
+            <format>%d</format>
+      	    <node>/instrumentation/afds/inputs/FD</node>
+      	</chunk>
+
+        <chunk>
+            <name>VS_23</name>
+            <type>int</type>
+            <format>%d</format>
+            <node>/instrumentation/afds/inputs/vertical-index</node>
+        </chunk>
+
+        <chunk>
+            <name>atarmed_24</name>
+            <type>bool</type>
+            <format>%d</format>
+            <node>/instrumentation/afds/inputs/at-armed</node>
+        </chunk>
+
+        <chunk>
+            <name>atarmed1_25</name>
+            <type>bool</type>
+            <format>%d</format>
+            <node>/instrumentation/afds/inputs/at-armed[1]</node>
+        </chunk>
+
+        <chunk>
+            <name>IAS_26</name>
+            <type>int</type>
+            <format>%d</format>
+            <node>/autopilot/settings/target-speed-kt</node>
+        </chunk>
+
+        <chunk>
+            <name>HDG_27</name>
+            <type>int</type>
+            <format>%d</format>
+            <node>/autopilot/settings/heading-bug-deg</node>
+        </chunk>
+
+        <chunk>
+            <name>ALT_28</name>
+            <type>int</type>
+            <format>%d</format>
+            <node>/autopilot/settings/counter-set-altitude-ft</node>
+        </chunk>
+
+        <chunk>
+            <name>VFS_29</name>
+            <type>int</type>
+            <format>%d</format>
+            <node>/autopilot/settings/vertical-speed-fpm</node>
+        </chunk>
+
+         <chunk>
+            <name>HDGHold_30</name>
+            <type>int</type>
+            <format>%d</format>
+            <node>/instrumentation/afds/inputs/lateral-index</node>
+        </chunk>
+
+        <chunk>
+            <name>GS_ARMED_31</name>
+            <type>bool</type>
+            <format>%d</format>
+            <node>/instrumentation/afds/inputs/gs-armed</node>
+        </chunk>
+
+    </output>
+  </generic>
+</PropertyList>
+

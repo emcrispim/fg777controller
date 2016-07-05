@@ -1,0 +1,148 @@
+##########################################################################
+# Author:               Eduardo Crispim, emcrispim@gmail.com
+# Date:                 July, 2016
+# 
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 2 or (at your
+# option) any later version as published by the Free Software Foundation.
+#
+#########################################################################
+
+<APMenu>:
+    size_hint: .9, .9
+    auto_dismiss: False
+    title: 'Autopilot'
+    BoxLayout:
+        spacing:2
+        padding:2
+        orientation:'vertical'
+        BoxLayout:
+            orientation:'horizontal'
+            ToggleButton:
+                id:AP
+                text:'AP'
+                on_press:root.setToggle(self.state,'AP')
+            ToggleButton:
+                id:FD
+                text:'FD'
+                on_press:root.setToggle(self.state,'FD')
+        BoxLayout:
+            orientation:'horizontal'
+            ToggleButton:
+                id:atarmed
+                text:'at arm L'
+                on_press:root.setToggle(self.state,'atarmed')
+            ToggleButton:
+                id:atarmed1
+                text:'at arm R'
+                on_press:root.setToggle(self.state,'atarmed1')
+        BoxLayout:
+            orientation:'horizontal'
+            ToggleButton:
+                id:AT
+                text:'AT'
+                on_press:root.setToggle(self.state,'AT')
+            ToggleButton:
+                id:FLCH
+                text:'FLCH'
+                on_press:root.setToggle(self.state,'FLCH')
+            Button:
+                text:'<'
+                on_press:root.setIAS(-10)
+            Label:
+                id:label_ias
+                text:'IAS 200'
+            Button:
+                text:'>'
+                on_press:root.setIAS(10)
+        BoxLayout:
+            orientation:'horizontal'
+            ToggleButton:
+                id:LNAV
+                text:'LNAV'
+                on_press:root.setToggle(self.state,'LNAV')
+            ToggleButton:
+                id:VNAV
+                text:'VNAV'
+                on_press:root.setToggle(self.state,'VNAV')
+            ToggleButton:
+                id:LOC
+                text:'LOC'
+                on_press:root.setToggle(self.state,'LOC')
+            ToggleButton:
+                id:APP
+                text:'APP'
+                on_press:root.setToggle(self.state,'APP')
+
+
+        
+        BoxLayout:
+            orientation:'horizontal'
+            ToggleButton:
+                id:HDGHold
+                text:'HDG Hold'
+                on_press:root.setToggle(self.state,'HDGHold')
+            Button:
+                text:'<<'
+                on_press:root.setHDG(-10)
+            Button:
+                text:'<'
+                on_press:root.setHDG(-1)
+            Label:
+                id:label_hdg
+                text:'HDG 200'
+            Button:
+                text:'>'
+                on_press:root.setHDG(1)
+            Button:
+                text:'>>'
+                on_press:root.setHDG(10)
+
+        BoxLayout:
+            orientation:'horizontal'
+            ToggleButton:
+                id:ALTHold
+                text:'ALT Hold'
+                on_press:root.setToggle(self.state,'ALTHold')
+            Button:
+                text:'<<'
+                on_press:root.setALT(-1000)
+            Button:
+                text:'<'
+                on_press:root.setALT(-100)
+            Label:
+                id:label_alt
+                text:'ALT 10000'
+            Button:
+                text:'>'
+                on_press:root.setALT(100)
+            Button:
+                text:'>>'
+                on_press:root.setALT(1000)
+
+        BoxLayout:
+            orientation:'horizontal'
+            ToggleButton:
+                id:VS
+                text:'VS/FPA'
+                on_press:root.setToggle(self.state,'VS')
+            Button:
+                text:'<<'
+                on_press:root.setVFS(-1000)
+            Button:
+                text:'<'
+                on_press:root.setVFS(-100)
+            Label:
+                id:label_vfs
+                text:'VFS'
+            Button:
+                text:'>'
+                on_press:root.setVFS(100)
+            Button:
+                text:'>>'
+                on_press:root.setVFS(1000)
+
+        
+        Button:
+            text: 'Close'
+            on_press: root.dismiss()

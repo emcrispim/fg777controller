@@ -1,0 +1,4 @@
+title=FGController
+author=ecrispim
+orientation=landscape
+fullscreen=1

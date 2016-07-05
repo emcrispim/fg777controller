@@ -1,0 +1,64 @@
+##########################################################################
+# Author:               Eduardo Crispim, emcrispim@gmail.com
+# Date:                 July, 2016
+# 
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 2 or (at your
+# option) any later version as published by the Free Software Foundation.
+#
+#########################################################################
+
+<ViewButtons>:
+	orientation:'vertical'
+	Button:
+	    background_normal:'atlas://myatlas/nextview_off'
+	    background_down:'atlas://myatlas/nextview_on'
+	    on_press:root.setNextView()
+
+	Button:
+	    background_normal:'atlas://myatlas/previousview_off'
+	    background_down:'atlas://myatlas/previousview_on'
+	    on_press:root.setPreviousView()
+
+	ToggleButton:
+	    id:cpt_view
+	    group:"views"
+	    state:'down'
+	    background_normal:'atlas://myatlas/cpt_view_off'
+	    background_down:'atlas://myatlas/cpt_view_on'
+	    on_press:root.setView(0)
+
+	ToggleButton:
+	    id:cdu_view
+	    background_normal:'atlas://myatlas/cdu_view_off'
+	    background_down:'atlas://myatlas/cdu_view_on'
+	    group:"views"
+	    on_press:root.setView(9)
+
+	ToggleButton:
+	    id:oh_view
+	    background_normal:'atlas://myatlas/oh_view_off'
+	    background_down:'atlas://myatlas/oh_view_on'
+	    group:"views"
+	    on_press:root.setView(10)
+
+	ToggleButton:
+	    id:fgear_view
+	    background_normal:'atlas://myatlas/fgear_view_off'
+	    background_down:'atlas://myatlas/fgear_view_on'
+	    group:"views"
+	    on_press:root.setView(12)
+
+	ToggleButton:
+	    id:heli_view
+	    background_normal:'atlas://myatlas/heli_view_off'
+	    background_down:'atlas://myatlas/heli_view_on'
+	    group:"views"
+	    on_press:root.setView(1)
+
+	ToggleButton:
+	    id:flyby_view
+	    background_normal:'atlas://myatlas/flyby_view_off'
+	    background_down:'atlas://myatlas/flyby_view_on'
+	    group:"views"
+	    on_press:root.setView(6)

@@ -1,0 +1,133 @@
+##########################################################################
+# Author:               Eduardo Crispim, emcrispim@gmail.com
+# Date:                 July, 2016
+# 
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 2 or (at your
+# option) any later version as published by the Free Software Foundation.
+#
+#########################################################################
+
+<T1@TextInput>:
+	size_hint_y: None
+	height: sp(30)
+
+<L1@Label>:
+	size_hint_y: None
+	height: sp(30)
+
+
+<Settings>:
+	size_hint: 0.8,0.95
+	auto_dismiss:False
+	title:'Settings'
+	ScrollView:
+		size_hint: None, None
+		size: self.parent.width, self.parent.height
+		do_scroll_x: False
+		scroll_timeout:55
+
+		GridLayout:
+			cols: 2
+			padding: 5
+			spacing: 10
+			size_hint_y: None
+			height: self.minimum_height
+
+			L1:
+				text:"Flightgear IP"
+			T1:
+				id:ip
+				input_type:'address'
+				multiline:False
+
+			L1:
+				text:"Outgoing UDP port\n (requires app restart)"
+			T1:
+				id:outgoingport
+				input_type:'number'
+				multiline:False
+
+			L1:
+				text:"Incoming UDP port\n (requires app restart)"
+			T1:
+				id:incomingport
+				input_type:'number'
+				multiline:False
+
+			L1:
+				text:"Telnet port"
+			T1:
+				id:telnetport
+				input_type:'number'
+				multiline:False
+
+			L1:
+				text:"Accelerometer Elevator sensitivy"
+				height: sp(50)
+			Slider:
+				id:elevatorsensitivy
+				height: sp(50)
+				orientation:'horizontal'
+				step:0.1
+				min:1
+				max:10
+
+			L1:
+				text:"Accelerometer Aileron sensitivy"
+				height: sp(50)
+			Slider:
+				id:aileronsensivity
+				height: sp(50)
+				orientation:'horizontal'
+				step:0.1
+				min:1
+				max:10
+
+			L1:
+				text:"Accelerometer/pad threshold"
+				height: sp(50)
+			Slider:
+				id:threshold
+				height: sp(50)
+				orientation:'horizontal'
+				step:0.01
+				min:0.01
+				max:0.1
+
+			L1:
+				text:"Pad Auto Center"
+			Switch:
+				id:padautocenter
+
+			L1:
+				text:"Rudder Auto Center"
+			Switch:
+				id:rudderautocenter
+
+			L1:
+				text:"Smooth rudder"
+			Switch:
+				id:smoothrudder
+
+			L1:
+				text:"Brakes auto disabled"
+			Switch:
+				id:brakesautodisable
+			L1:
+				text:"Anchor Throttle"
+			Switch:
+				id:throttleancor
+
+			L1:
+				text:"Disabled FlightGear\nController update (Time s)"
+			T1:
+				id:ctrltimedisabled
+				input_type:'number'
+				multiline:False
+			L1:
+			Button:
+				size_hint_y: None
+				height: sp(60)
+				text: 'Close'
+				on_press: root.dismiss()

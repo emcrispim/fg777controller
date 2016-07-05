@@ -1,0 +1,365 @@
+##########################################################################
+# Author:               Eduardo Crispim, emcrispim@gmail.com
+# Date:                 July, 2016
+# 
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 2 or (at your
+# option) any later version as published by the Free Software Foundation.
+#
+#########################################################################
+
+<InfoPopup>:
+    title: 'Info'
+    size_hint: 0.4,0.4
+    #size: 400,150
+    BoxLayout:
+        spacing:2
+        padding:2
+        orientation:'vertical'
+        Label:
+            id:txt
+            text:""
+            text_size: cm(10), cm(4)
+            halign: 'center'
+            valign: 'middle'
+        Button:
+            text: 'Close'
+            on_press: root.dismiss()
+
+
+<AcclPopup>:
+    title: 'Accl Calibrate'
+    size_hint: .4, .4
+    BoxLayout:
+        spacing:2
+        padding:2
+        orientation:'vertical'
+        Label:
+            id:timer_label
+            text:"Calibrate in 3 s"
+        Button:
+            text: 'Now'
+            on_press: root.dismiss()
+
+
+<TextDisplay@Label>:
+    canvas.before:
+        Color:
+            rgba:0.1,0.1,0.1,0.2
+        Rectangle:
+            size:self.size
+            pos:self.pos
+    font_size: '14sp'
+    halign: 'left'
+    valign: 'middle'
+    size_hint: None,None
+    height:'14sp'
+   
+                    
+<PadPanel@RelativeLayout>:
+    canvas:
+        Rectangle:
+            size:self.size
+            source:"img/pad_bk.png"
+<PadCtrl>:
+    id:padctrl
+    size_hint:None,None
+    showpad:True
+    canvas:
+        Rotate:
+            angle: self.angle
+            origin: self.center
+        Color:
+            a: 1 if self.showpad else 0
+        Rectangle:
+            size: self.size
+            pos:self.pos
+            source:"atlas://myatlas/pad"
+        Color:
+            a: 0 if self.showpad else 1
+        Rectangle:
+            size: self.size
+            pos:self.pos
+            source:"atlas://myatlas/wheel"
+        Color:
+            a:1
+
+<GearKnob@GearKnobWidget>:
+    size_hint:None,None
+    canvas:
+        Rectangle:
+            size: self.size
+            pos:self.pos
+            source:"atlas://myatlas/gearknob"
+
+<AutoBrakeKnob@AutoBrakeKnobWidget>:
+    size_hint:None,None
+    canvas:
+        Rotate:
+            angle: self.angle
+            origin: self.center
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source:"atlas://myatlas/autobrakeknob"
+
+<ElevatorTrim@ElevatorTrimWidget>:
+    size_hint:None,None
+    canvas:
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source:"atlas://myatlas/trim"
+
+
+<ThrootleKnobLeft@ThrootleKnob>:
+    size_hint:None,None
+    canvas:
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source:"atlas://myatlas/thknobleft"
+
+<ThrootleKnobRight@ThrootleKnob>:
+    size_hint:None,None
+    canvas:
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source:"atlas://myatlas/thknobright"
+
+<FlapsKnob>:
+    size_hint:None,None
+    show:True
+    canvas:
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source:"atlas://myatlas/flapsknob"
+        Color:
+
+<SpeedBrakeKnob>:
+    size_hint:None,None
+    canvas:
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source:"atlas://myatlas/speedbrakeknob"
+
+<RudderKnob>:
+    size_hint:None,None
+    canvas:
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source:"atlas://myatlas/rudderknob"
+
+<BrakesKnob>:
+    size_hint:None,None
+    canvas:
+        Rectangle:
+            size:self.size
+            pos:self.pos
+            source:"atlas://myatlas/vslidder"
+
+<MainUI>:
+    id:mainui
+    padctrl:padctrl
+    flaps:flaps
+    rudder:rudder
+    brakes:brakes
+    elevatortrim:elevatortrim
+    throttleleft:throttleleft
+    throttleright:throttleright
+    speedbrake:speedbrake
+    autobrake:autobrake
+    gear:gear
+    lightsbuttons:lightsbuttons
+    viewbuttons:viewbuttons
+    orientation: 'horizontal'
+    BoxLayout:
+        orientation:'vertical'
+        size_hint_x:0.5
+        BoxLayout:
+            orientation:'horizontal'
+            size_hint_y:0.8
+            BoxLayout:
+                orientation:'vertical'
+                Button:
+                    size_hint_y:None
+                    height:self.parent.width
+                    background_normal:'atlas://myatlas/settings'
+                    on_press:root.doSettings()
+                ToggleButton:
+                    id:accl
+                    background_normal:'atlas://myatlas/acc_off'
+                    background_down:'atlas://myatlas/acc_on'
+                    on_press:root.onSetAccelerometer(self.state)  
+                Button:
+                    #size_hint_y:0.3
+                    background_normal:'atlas://myatlas/trimup_off'
+                    background_down:'atlas://myatlas/trimup_on'  
+                    on_press:root.elevatortrim.set("up")
+                Button:
+                    background_normal:'atlas://myatlas/trimdn_off'
+                    background_down:'atlas://myatlas/trimdn_on'  
+                    on_press:root.elevatortrim.set("down")
+            PadPanel:
+                size_hint_x:None
+                width:self.height
+                TextDisplay:
+                    id:label_spd
+                    text:"SPD:___"
+                    pos:self.parent.width*0.1,self.parent.height*0.9
+                TextDisplay:
+                    id:label_alt
+                    text:"ALT:_____"
+                    pos:self.parent.width*0.7,self.parent.height*0.9
+                TextDisplay:
+                    id:label_vsi
+                    text:"VSI:____"
+                    pos:self.parent.width*0.7,self.parent.height*0.8
+                TextDisplay:
+                    id:label_hdg
+                    text:"HDG:___"
+                    pos:self.parent.width*0.1,self.parent.height*0.8
+                ElevatorTrim:
+                    id:elevatortrim
+                    size:self.parent.width/9,self.parent.height/9
+                    pos:0,self.parent.height/2-self.height/2
+                PadCtrl:
+                    id:padctrl
+                    size:self.parent.width/4,self.parent.height/4
+                    center:self.parent.width/2,self.parent.height/2
+                
+        RelativeLayout:
+            size_hint_y:0.2
+            canvas:
+                Rectangle:
+                    size:self.size
+                    pos:0,0
+                    source:"img/rudder_bk.png"
+            RudderKnob:
+                id:rudder
+                size: (self.parent.height ,self.parent.height)
+                center:(self.width/2,self.height/2)
+
+    
+
+    BoxLayout:
+        orientation:'vertical'
+        size_hint_x:0.50                   
+
+        BoxLayout:
+            orientation:'vertical'
+            size_hint_y:0.9
+            canvas:
+                Rectangle:
+                    size:self.size
+                    pos:self.pos
+                    source:"img/background.png"
+            BoxLayout:
+                orientation:'horizontal'    
+                RelativeLayout:
+                    SpeedBrakeKnob:
+                        id:speedbrake
+                        size:self.parent.width,self.parent.width
+                        center:self.parent.width/2,self.parent.height/2
+                RelativeLayout:
+                    ThrootleKnobLeft:
+                        id:throttleleft
+                        size:self.parent.width,self.parent.width
+                        center:self.parent.width/2+self.parent.width/11,self.parent.height/2
+                RelativeLayout:
+                    ThrootleKnobRight:
+                        id:throttleright
+                        size:self.parent.width,self.parent.width
+                        center:self.parent.width/2-self.parent.width/11,self.parent.height/2
+                RelativeLayout:
+                    FlapsKnob:
+                        id:flaps
+                        size:self.parent.width,self.parent.width
+                        center:self.parent.width/2,self.parent.height/2
+                    ViewButtons:
+                        opacity:0
+                        disabled:True
+                        size_hint:None,None
+                        size:0,0
+                        id:viewbuttons
+                    LightsButtons:
+                        opacity:0
+                        disabled:True
+                        size_hint:None,None
+                        size:0,0
+                        id:lightsbuttons
+                BoxLayout:
+                    orientation:'vertical'
+                    BoxLayout:
+                        size_hint_y:0.30
+                        orientation:'vertical'    
+                        Button:
+                            on_press:root.showAPMenu() 
+                            background_normal:'atlas://myatlas/APmenuBt_off'
+                            background_down:'atlas://myatlas/APmenuBt_on'
+                        
+                        ToggleButton:
+                            id:lightsmenu
+                            background_normal:'atlas://myatlas/lights_menu_off'
+                            background_down:'atlas://myatlas/lights_menu_on'
+                            on_press:root.onLights(self.state)
+                            group:"submenu"
+
+                        ToggleButton:
+                            id:viewmenu
+                            background_normal:'atlas://myatlas/view_menu_off'
+                            background_down:'atlas://myatlas/view_menu_on'
+                            on_press:root.onView(self.state)
+                            group:"submenu"
+        
+                    RelativeLayout:
+                        size_hint_y:0.37
+                        GearKnob:
+                            id:gear
+                            size:self.parent.width,self.parent.width
+                            center:self.parent.width/2,self.parent.height*0.5
+
+                    RelativeLayout:
+                        size_hint_y:0.33
+                        AutoBrakeKnob:
+                            id:autobrake 
+                            size:self.parent.width,self.parent.width
+                            center:self.parent.width/2,self.parent.height*0.54
+
+                    
+           
+        BoxLayout:
+            orientation:'horizontal'
+            size_hint_y:0.1
+
+            ToggleButton:
+                id:parkingbrake
+                size_hint_x:0.2
+                state:'down'
+                background_normal:'atlas://myatlas/pbrake_off'
+                background_down:'atlas://myatlas/pbrake_on'
+                on_press:root.onControllerParkingBrakeChange(self.state)
+
+            ToggleButton:
+                id:reverse
+                size_hint_x:0.2
+                on_press:root.onControllerReverseChange(self.state)
+                background_normal: 'atlas://myatlas/revth_off'
+                background_down:'atlas://myatlas/revth_on'
+
+            RelativeLayout:
+                size_hint_x:0.4
+                canvas:
+                    Rectangle:
+                        size:self.size
+                        pos:0,0
+                        source:"img/brakes_bk.png"
+                BrakesKnob:
+                    id:brakes
+                    size: (self.parent.height ,self.parent.height)
+                    center:(self.parent.width*0.15,self.height/2)
+                

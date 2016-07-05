@@ -1,0 +1,48 @@
+##########################################################################
+# Author:               Eduardo Crispim, emcrispim@gmail.com
+# Date:                 July, 2016
+# 
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 2 or (at your
+# option) any later version as published by the Free Software Foundation.
+#
+#########################################################################
+
+<LightsButtons>:
+	orientation:'vertical'
+	ToggleButton:
+		id:BEACON
+		background_normal:'atlas://myatlas/beacon_off'
+	    background_down:'atlas://myatlas/beacon_on'
+		on_press:root.toggle(self.state,'BEACON')
+	ToggleButton:
+		id:NAV
+		background_normal:'atlas://myatlas/nav_off'
+	    background_down:'atlas://myatlas/nav_on'
+		on_press:root.toggle(self.state,'NAV')
+	ToggleButton:
+		id:LOGO
+		background_normal:'atlas://myatlas/logo_off'
+	    background_down:'atlas://myatlas/logo_on'
+		on_press:root.toggle(self.state,'LOGO')
+	ToggleButton:
+		id:WING
+		background_normal:'atlas://myatlas/wing_off'
+	    background_down:'atlas://myatlas/wing_on'
+		on_press:root.toggle(self.state,'WING')
+	ToggleButton:
+		id:STROBE
+		background_normal:'atlas://myatlas/strobe_off'
+	    background_down:'atlas://myatlas/strobe_on'
+		on_press:root.toggle(self.state,'STROBE')
+	ToggleButton:
+		id:LANDING
+		background_normal:'atlas://myatlas/landing_off'
+	    background_down:'atlas://myatlas/landing_on'
+		on_press:root.toggle(self.state,'LANDING')
+	ToggleButton:
+		id:TAXI
+		background_normal:'atlas://myatlas/taxi_off'
+	    background_down:'atlas://myatlas/taxi_on'
+		on_press:root.toggle(self.state,'TAXI')
+
