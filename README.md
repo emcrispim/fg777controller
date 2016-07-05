@@ -5,7 +5,7 @@
 ## About
 flighgear boeing 777 Controller for android
 
-This application allows control the boeing 777 Flightgear, read usage for proper configuration
+This application allows control the [boeing 777](http://wiki.flightgear.org/Boeing_777) [Flightgear](http://www.flightgear.org/), read usage for proper configuration
 
 
 ![Apk Panel](https://s31.postimg.org/tess898xn/fg777controller.png)
