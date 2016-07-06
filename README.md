@@ -4,7 +4,7 @@
 ## About
 FlightGear Boeing 777 Controller for android
 
-This application allows control the [Boeing 777](http://wiki.flightgear.org/Boeing_777) [Flightgear](http://www.flightgear.org/), read usage for proper configuration.
+This application allows control the [Boeing 777](http://wiki.flightgear.org/Boeing_777) Airplane  from the [Flightgear](http://www.flightgear.org/) Flight Simulator, read usage for proper configuration.
 
 
 ![Apk Panel](https://s31.postimg.org/tess898xn/fg777controller.png)
@@ -27,7 +27,7 @@ This application allows control the [Boeing 777](http://wiki.flightgear.org/Boei
 * lights
 * autopilot
 
-This are specific controllers for the Boeing 777, but it  can be used to control other aircrafts for basic usage like the, steering,rudder, throttle (one or two engines), gear, brakes, lights.
+This are specific controllers for the Boeing 777, but it  can be used to control other aircrafts for basic usage, like:  steering,rudder, throttle (one or two engines), gear, brakes, lights.
 
 
 ## Usage:
@@ -64,5 +64,5 @@ This application was developed with python kivy that can runs on Linux, Windows,
 * jnius (used 1.1)
 
 
-Before run on PC uncomment the line `Window.size = (960, 540)` it can be used other resolution with the same ratio.
-It can be run under the android kivy luncher app.
+Before run on PC uncomment the line `Window.size = (960, 540)` or use other resolution with the same ratio.
+It can be run under the android kivy luncher app ([here](https://play.google.com/store/apps/details?id=org.kivy.pygame&hl=pt)).
