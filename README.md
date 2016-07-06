@@ -34,7 +34,7 @@ This are specific controllers for the Boeing 777, but it  can be used to control
 ------
 1. Install/running FlightGear ([Site link](http://www.flightgear.org))
 2. Install/Select Boeing 777 ([download link](http://fgfs.goneabitbursar.com/official/777.zip))
-1. Copy the xml files (from_fg777controller.xml,to_fg777controller.xml) from the xml repository directory to your FlightGear `Protocol` directory 
+1. Copy the xml files (from_fg777controller.xml,to_fg777controller.xml) from this repository and place  in the  `FlightGear-installation-Directory`/Protocol` directory.
 2. Run the FlighGear with the following configuration parameters:
   * From command line:
         
