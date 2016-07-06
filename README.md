@@ -44,7 +44,7 @@ This are specific controllers for the Boeing 777, but it  can be used to control
 
   * Or Use FGRun to set the required parameters in the  via Advanced > Input/Output menu.
   
-  **Obs**: Change **android-device-ip** with your local IP Wi-Fi network
+  **Obs**: Change **android-device-ip** with your local IP Wi-Fi network device.
 
 3. Install the apk from the bin directory (debug version).
 4. Go to the Settings (upper left corner button) and enter the IP of your computer running FlightGear
