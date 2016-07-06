@@ -1,11 +1,10 @@
-
 # FG777controller
 
 
 ## About
-flighgear boeing 777 Controller for android
+FlightGear Boeing 777 Controller for android
 
-This application allows control the [boeing 777](http://wiki.flightgear.org/Boeing_777) [Flightgear](http://www.flightgear.org/), read usage for proper configuration.
+This application allows control the [Boeing 777](http://wiki.flightgear.org/Boeing_777) [Flightgear](http://www.flightgear.org/), read usage for proper configuration.
 
 
 ![Apk Panel](https://s31.postimg.org/tess898xn/fg777controller.png)
@@ -18,37 +17,37 @@ This application allows control the [boeing 777](http://wiki.flightgear.org/Boei
 * Rudder
 * Throttle (left and right engine)
 * Flaps
-* Speedbrake
+* Speed brake
 * Gear
 * Parking brake
 * Reverse
 * brakes
-* autobrake
+* auto brake
 * views
 * lights
 * autopilot
 
-This are specific controllers for the boeing 777, but it  can be used to controll other aircrafts for basic usage like the, steering,rudder, throttle (one or two engines), gear, brakes, lights.
+This are specific controllers for the Boeing 777, but it  can be used to control other aircrafts for basic usage like the, steering,rudder, throttle (one or two engines), gear, brakes, lights.
 
 
 ## Usage:
 ------
-1. Install/running Flighgear ([Site link](http://www.flightgear.org))
+1. Install/running FlightGear ([Site link](http://www.flightgear.org))
 2. Install/Select Boeing 777 ([download link](http://fgfs.goneabitbursar.com/official/777.zip))
-1. Copy the xml files from the xml repository directory to your FlightGear `Protocol` directory 
-2. Run the FlighGear with the required parameters:
+1. Copy the xml files (from_fg777controller.xml,to_fg777controller.xml) from this repository and place  in the  `FlightGear-installation-Directory`/Protocol` directory.
+2. Run the FlighGear with the following configuration parameters:
   * From command line:
         
-        fgfs --generic=socket,in,20,,9009,udp,from_fgcontroller777 \
+        `fgfs --generic=socket,in,20,,9009,udp,from_fgcontroller777 \
         --generic=socket,out,5,android-device-ip,9010,udp,to_fgcontroller777 \ 
-        --telnet 9000
+        --telnet 9000`
 
-  * Or Use FGRun to set the required parameters in the  via Advanced > Input/Output menu.
+  * Or Use FGRun to set the required parameters via Advanced > Input/Output menu.
   
-  **Obs**: Change **android-device-ip** with your local ip Wifi network
+  **Obs**: Change **android-device-ip** with your local IP Wi-Fi network device.
 
 3. Install the apk from the bin directory (debug version).
-4. Go to the Settings (left up corner button) and enter the IP of your computer running Flighgear
+4. Go to the Settings (upper left corner button) and enter the IP of your computer running FlightGear
 
 
 ## Development Requirements

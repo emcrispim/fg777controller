@@ -1,0 +1,72 @@
+##########################################################################
+# Author:               Eduardo Crispim, emcrispim@gmail.com
+# Date:                 July, 2016
+# 
+# This program is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License version 2 or (at your
+# option) any later version as published by the Free Software Foundation.
+#
+#########################################################################
+
+<L1@Label>:
+	size_hint_y: None
+	height: sp(40)
+	text_size: root.width, None
+    halign: 'left'
+    valign: 'middle'
+
+
+<Disclaimer1>:
+	size_hint: 0.8,0.95
+	auto_dismiss:False
+	title:'Disclaimer'
+	BoxLayout:
+		orientation:'vertical'
+		ScrollView:
+			size_hint_y: 0.9
+			size_hint_x: 1
+			do_scroll_x: False
+			scroll_timeout:55
+			GridLayout:
+				cols:1
+				padding:5
+				spacing:10
+				size_hint_y:None
+				height: self.minimum_height
+				L1: 
+					text:"[b]NOTE: Read carefully this procedure before you start[b]"
+					halign:"center"
+					markup:True
+				L1:
+					text:"[b]Configuration Procedures[b]"
+					halign:"center"
+					markup:True
+				L1:
+					text:"1. Copy the xml Files (from_fg777controller.xml and to_fg777controller.xml) from [b][color=AAAAAA]https://github.com/emcrispim/fg777controller[/color][/b] and place in the  [b][color=AAAAAA]FlightGear-installation-Directory[/color][/b]/Protocol directory"
+					markup:True
+				L1:
+					text:"2. Run the FlighGear with the following configuration parameters:"
+				L1:
+					text:"     From command line:\n        fgfs --generic=socket,in,20,,9009,udp,from_fgcontroller777 \n        --generic=socket,out,5,[b][color=AAAAAA]android-device-ip[/color][/b],9010,udp,to_fgcontroller777 \n        --telnet 9000"
+					markup:True
+				L1:
+					text:"\n     Or Use FGRun to set the required parameters via Advanced > Input/Output menu."
+				L1:
+					text:"     [b]Obs[/b]: Change [b][color=AAAAAA]android-device-ip[/color][/b] with your local IP Wi-Fi network device"
+					markup:True
+				L1:
+					text:"3. Go to the Settings (upper left corner button) and enter the IP of your computer running FlightGear"
+			
+		BoxLayout:
+			orientation:'horizontal'
+			size_hint_y: 0.1
+			CheckBox:
+				id:chkbox
+				size_hint_x:0.05
+			L1:
+				size_hint_x:0.55
+				text:"Don't show this message again"
+			Button:
+				size_hint_x:0.4
+				text:'Close'
+				on_press:root.dismiss()

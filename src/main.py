@@ -34,6 +34,7 @@ from kivy.properties import  ObjectProperty
 from ViewButtons import ViewButtons
 from LightsButtons import LightsButtons
 from Controllers import *
+from Disclaimer import *
 from APMenu import APMenu
 from AcclPopup import AcclPopup
 from Settings import Settings
@@ -58,7 +59,7 @@ except:
 	Logger.debug("jnius autoclass exception, app is not running on android")
 
 # for PC only
-#Window.size = (960, 540)
+Window.size = (960, 540)
 
 
 #--------------------------------------------------------------------
@@ -71,6 +72,7 @@ Builder.load_file('APMenu.kv')
 Builder.load_file('ViewButtons.kv')
 Builder.load_file('LightsButtons.kv')
 Builder.load_file('Settings.kv')
+Builder.load_file('Disclaimer.kv')
 
 
 '''
@@ -191,8 +193,15 @@ class MainUI(BoxLayout):#the app ui
 #--------------------------------------------------------------------
 	def init5(self):
 		if not self.initiated:
-			self.UDPSock_out = socket(AF_INET,SOCK_DGRAM)
 			self.telnetconnect()
+			if self.app.config.getint("Settings","disclaimer")==0:
+				Logger.debug("Open Disclaimer1")
+				d = Disclaimer1(bindroot=self)
+				d.open()
+			else:
+				self.checkTelnet()
+
+			self.UDPSock_out = socket(AF_INET,SOCK_DGRAM)
 			self.rudder.docenter()
 			self.elevatortrim.toController(self.current['elevatortrim'])
 			self.gear.toController(self.current['gear'])
@@ -201,7 +210,6 @@ class MainUI(BoxLayout):#the app ui
 			self.throttleleft.toController(self.current['throttleleft'])
 			self.throttleright.toController(self.current['throttleright'])
 			Clock.schedule_interval(self.loop,0.1)
-			self.checkTelnet()
 			self.initiated = True
 	
 	
@@ -603,7 +611,8 @@ class FG777controller(App): #our app
 			'smoothrudder':1,
 			'brakesautodisable':1,
 			'ctrltimedisabled':5,
-			'throttleancor':0
+			'throttleancor':0,
+			'disclaimer':0
 			})
 
 #--------------------------------------------------------------------
