@@ -42,7 +42,7 @@ This are specific controllers for the Boeing 777, but it  can be used to control
         --generic=socket,out,5,android-device-ip,9010,udp,to_fgcontroller777 \ 
         --telnet 9000`
 
-  * Or Use FGRun to set the required parameters in the  via Advanced > Input/Output menu.
+  * Or Use FGRun to set the required parameters via Advanced > Input/Output menu.
   
   **Obs**: Change **android-device-ip** with your local IP Wi-Fi network device.
 
