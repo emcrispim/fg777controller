@@ -35,7 +35,7 @@ This are specific controllers for the Boeing 777, but it  can be used to control
 1. Install/running FlightGear ([Site link](http://www.flightgear.org))
 2. Install/Select Boeing 777 ([download link](http://fgfs.goneabitbursar.com/official/777.zip))
 1. Copy the xml files from the xml repository directory to your FlightGear `Protocol` directory 
-2. Run the FlighGear with the required parameters:
+2. Run the FlighGear with the following configuration parameters:
   * From command line:
         
         fgfs --generic=socket,in,20,,9009,udp,from_fgcontroller777 \
@@ -47,7 +47,7 @@ This are specific controllers for the Boeing 777, but it  can be used to control
   **Obs**: Change **android-device-ip** with your local IP Wi-Fi network
 
 3. Install the apk from the bin directory (debug version).
-4. Go to the Settings (left up corner button) and enter the IP of your computer running FlightGear
+4. Go to the Settings (upper left corner button) and enter the IP of your computer running FlightGear
 
 
 ## Development Requirements
