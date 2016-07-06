@@ -38,9 +38,9 @@ This are specific controllers for the Boeing 777, but it  can be used to control
 2. Run the FlighGear with the following configuration parameters:
   * From command line:
         
-        fgfs --generic=socket,in,20,,9009,udp,from_fgcontroller777 \
+        `fgfs --generic=socket,in,20,,9009,udp,from_fgcontroller777 \
         --generic=socket,out,5,android-device-ip,9010,udp,to_fgcontroller777 \ 
-        --telnet 9000
+        --telnet 9000`
 
   * Or Use FGRun to set the required parameters in the  via Advanced > Input/Output menu.
   
