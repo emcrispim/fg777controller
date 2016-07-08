@@ -10,7 +10,7 @@
 #########################################################################
 
 
-__version__ = '1.0' #declare the app version. Will be used by buildozer
+__version__ = '1.0.0' #declare the app version. Will be used by buildozer
 
 from kivy.support import install_twisted_reactor
 
