@@ -11,7 +11,6 @@ This application allows control the [Boeing 777](http://wiki.flightgear.org/Boei
 
 
 ## Control Features:
------------------
 * Steering with virtual pad or accelerometer
 * Elevator trim
 * Rudder
@@ -31,7 +30,6 @@ This are specific controllers for the Boeing 777, but it  can be used to control
 
 
 ## Usage:
-------
 1. Install/running FlightGear ([Site link](http://www.flightgear.org))
 2. Install/Select Boeing 777 ([download link](http://fgfs.goneabitbursar.com/official/777.zip))
 1. Copy the xml files (from_fg777controller.xml,to_fg777controller.xml) from this repository and place  in the  `FlightGear-installation-Directory`/Protocol` directory.
@@ -51,7 +49,6 @@ This are specific controllers for the Boeing 777, but it  can be used to control
 
 
 ## Development Requirements
-------------------------
 
 This application was developed with python kivy that can runs on Linux, Windows, OS X, Android and iOS.
 
