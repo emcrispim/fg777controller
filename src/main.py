@@ -59,7 +59,7 @@ except:
 	Logger.debug("jnius autoclass exception, app is not running on android")
 
 # for PC only
-Window.size = (960, 540)
+#Window.size = (960, 540)
 
 
 #--------------------------------------------------------------------
@@ -611,7 +611,7 @@ class FG777controller(App): #our app
 			'smoothrudder':1,
 			'brakesautodisable':1,
 			'ctrltimedisabled':5,
-			'throttleancor':0,
+			'throttleancor':1,
 			'disclaimer':0
 			})
 

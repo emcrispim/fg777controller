@@ -1,4 +1,4 @@
-title=FGController
+title=FG777Controller
 author=ecrispim
 orientation=landscape
 fullscreen=1

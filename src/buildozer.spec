@@ -7,7 +7,7 @@ title = FlightGear 777 Controller
 package.name = fg777controller
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.fg777controller
+package.domain = org.emcrispim.fg777controller
 
 # (str) Source code where the main.py live
 source.dir = .

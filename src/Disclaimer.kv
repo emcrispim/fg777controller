@@ -10,7 +10,7 @@
 
 <L1@Label>:
 	size_hint_y: None
-	height: sp(40)
+	height: sp(50)
 	text_size: root.width, None
     halign: 'left'
     valign: 'middle'
@@ -34,7 +34,7 @@
 				size_hint_y:None
 				height: self.minimum_height
 				L1: 
-					text:"[b]NOTE: Read carefully this procedure before you start[b]"
+					text:"[b]NOTE: Read carefully this procedure before you start[b]\nOr check the site http://wiki.flightgear.org/FG777Controller for  more detailed information"
 					halign:"center"
 					markup:True
 				L1:
@@ -46,16 +46,19 @@
 					markup:True
 				L1:
 					text:"2. Run the FlighGear with the following configuration parameters:"
+					markup:True
 				L1:
 					text:"     From command line:\n        fgfs --generic=socket,in,20,,9009,udp,from_fgcontroller777 \n        --generic=socket,out,5,[b][color=AAAAAA]android-device-ip[/color][/b],9010,udp,to_fgcontroller777 \n        --telnet 9000"
 					markup:True
 				L1:
 					text:"\n     Or Use FGRun to set the required parameters via Advanced > Input/Output menu."
+					markup:True
 				L1:
 					text:"     [b]Obs[/b]: Change [b][color=AAAAAA]android-device-ip[/color][/b] with your local IP Wi-Fi network device"
 					markup:True
 				L1:
 					text:"3. Go to the Settings (upper left corner button) and enter the IP of your computer running FlightGear"
+					markup:True
 			
 		BoxLayout:
 			orientation:'horizontal'
