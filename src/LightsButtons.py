@@ -75,8 +75,8 @@ class LightsButtons(BoxLayout):
 		self.data[item]['current'] = self.data[item][state]
 		self.bindroot.setFG(self.data[item]['key'],self.data[item][state])
 		if item == 'LANDING':
-			self.bindroot.setFG(self.data[item]['key1'],self.data[item][state])
 			self.bindroot.setFG(self.data[item]['key2'],self.data[item][state])
+			self.bindroot.setFG(self.data[item]['key1'],self.data[item][state])
 
 
 #--------------------------------------------------------------------

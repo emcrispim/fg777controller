@@ -536,17 +536,16 @@ class MainUI(BoxLayout):#the app ui
 #--------------------------------------------------------------------
 
 	def setFGcallback(self,dt):
-		#Logger.debug("telnet buffer:"+str(self.telnetcommand))
+		Logger.debug("telnet buffer:"+str(self.telnetcommand))
 		#self.telnet.write(self.telnetcommand[0])
 		#self.telnet.read_until('/> ',2)
 		#self.telnetcommand.pop(0)
 
 		for l in self.telnetcommand:
-			Logger.debug(str(self.telnetcommand))
+			Logger.debug("send command:"+l)
 			self.telnet.write(l)
 			self.telnet.read_until('/> ',2)
-			self.telnetcommand.pop(0)
-		#self.telnetcommand = []
+		self.telnetcommand = []
 		self.telnetwrite = False
 
 
